@@ -1,4 +1,4 @@
-# 🚀 Proyecto de Python y Flask
+# 🚀 Aprendizaje de Python y Flask
 
 Este repositorio contiene las actividades realizadas durante el aprendizaje de Python y Flask.
 
@@ -6,16 +6,13 @@ Este repositorio contiene las actividades realizadas durante el aprendizaje de P
 
 ## 📌 Actividad 1: Fundamentos de Python
 
-En el archivo `app.py` se desarrollan ejemplos básicos de Python.
+En el archivo `app.py` se desarrollan ejemplos básicos de Python (Video 1).
 
 Se practican:
 
-* Variables y tipos de datos
-* Entrada y salida de datos
-* Operadores
+* Variables, operadores y datos
 * Condicionales y bucles
-* Listas, tuplas y diccionarios
-* Funciones
+* Listas, diccionarios y funciones
 
 💡 Esta actividad sirve como introducción a los conceptos fundamentales de Python.
 
@@ -23,7 +20,7 @@ Se practican:
 
 ## 📌 Actividad 2: Gestión de Rutas con Flask
 
-En la carpeta `Gestion_Rutas_Flask` se implementan ejemplos de rutas usando Flask.
+En la carpeta `Gestion_Rutas_Flask` se implementan ejemplos rutas usando Flask (Video 2).
 
 Se trabajan:
 
