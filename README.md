@@ -4,9 +4,9 @@ Este repositorio contiene las actividades realizadas durante el aprendizaje de P
 
 ---
 
-## 📌 Actividad 1: Fundamentos de Python
+## 📌 Actividad 1: Desarrollo de Python Escencial (Video 1)
 
-En el archivo `app.py` se desarrollan ejemplos básicos de Python (Video 1).
+En el archivo `app.py` se desarrollan ejemplos básicos de Python.
 
 Se practican:
 
@@ -18,9 +18,9 @@ Se practican:
 
 ---
 
-## 📌 Actividad 2: Gestión de Rutas con Flask
+## 📌 Actividad 2: Gestión de Rutas con Flask (Video 2)
 
-En la carpeta `Gestion_Rutas_Flask` se implementan ejemplos rutas usando Flask (Video 2).
+En la carpeta `Gestion_Rutas_Flask` se implementan ejemplos rutas usando Flask.
 
 Se trabajan:
 
