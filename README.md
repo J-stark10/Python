@@ -4,7 +4,7 @@ Este repositorio contiene las actividades realizadas durante el aprendizaje de P
 
 ---
 
-## 📌 Actividad 1: Desarrollo de Python Escencial (Video 1)
+## 📌 Actividad 1: Desarrollo de Python Esencial (Video 1)
 
 En el archivo `app.py` se desarrollan ejemplos básicos de Python.
 
@@ -33,7 +33,25 @@ Se trabajan:
 
 ---
 
+## 📌 Actividad 3: Sistema de Login con Flask
+
+En la carpeta `Gestion Paginas` se desarrolla un login básico utilizando Flask.
+
+Se trabaja:
+
+* Formulario de inicio de sesión
+* Validación de usuario
+* Redirección entre páginas
+* Uso de plantillas HTML (Jinja2)
+* Archivos estáticos (CSS y Bootstrap)
+
+💡 Esta actividad simula un sistema de autenticación sencillo en una aplicación web.
+
+---
+
 ## 🛠️ Tecnologías utilizadas
 
 * Python 🐍
 * Flask 🌐
+* HTML + CSS 🎨
+* Bootstrap 💻
