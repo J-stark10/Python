@@ -61,6 +61,26 @@ Se realiza:
 
 💡 Esta actividad permite entender cómo manejar bases de datos desde Python.
 
+---
+
+## 📌 Actividad 5: CRUD completo con Flask + SQLite
+
+En la carpeta `CRUD_BD_Flask` se desarrolla una aplicación web con Flask conectada a SQLite implementando un CRUD completo.
+
+Se trabaja:
+
+* Crear registros (Create)
+* Leer registros (Read)
+* Actualizar registros (Update)
+* Eliminar registros (Delete)
+* Uso de rutas dinámicas en Flask
+* Manejo de formularios con `request.form`
+* Conexión y manipulación de base de datos SQLite
+
+💡 Esta actividad integra todo lo aprendido en un sistema funcional de gestión de contactos.
+
+---
+
 ## 🛠️ Tecnologías utilizadas
 
 * Python 🐍
