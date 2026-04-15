@@ -49,9 +49,22 @@ Se trabaja:
 
 ---
 
+## 📌 Actividad 4: Conexión a Base de Datos con SQLite
+
+En la carpeta `Conexion_BD` se trabaja con una base de datos SQLite usando Python.
+
+Se realiza:
+* Conexión a la base de datos con `sqlite3`
+* Creación de tablas (cursos, estudiantes, inscripciones)
+* Inserción de datos
+* Consultas con SELECT
+
+💡 Esta actividad permite entender cómo manejar bases de datos desde Python.
+
 ## 🛠️ Tecnologías utilizadas
 
 * Python 🐍
 * Flask 🌐
 * HTML + CSS 🎨
 * Bootstrap 💻
+* SQLite 🗄️
