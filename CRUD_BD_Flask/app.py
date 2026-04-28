@@ -1,118 +1,77 @@
-from flask import Flask,request,render_template,url_for,redirect
 import sqlite3
 
-app = Flask(__name__)
+conexion = sqlite3.connect('universidad.db')
 
-#Creacion de base de datos y tablas segun estructura
-def init_database():
-    conn = sqlite3.connect("contactos.db")
-    #Creamos la base de datos o nos conectamos a la DB
+# ── Crear tablas ──────────────────────────────────────────────
+conexion.execute('''
+CREATE TABLE IF NOT EXISTS aula (
+    id          INTEGER PRIMARY KEY,
+    descripcion TEXT    NOT NULL,
+    horas       INTEGER NOT NULL
+)''')
 
-    conn.execute(
-        """
-            CREATE TABLE IF NOT EXISTS personas(
-                id INTEGER PRIMARY KEY,
-                nombre TEXT NOT NULL,
-                telefono TEXT NOT NULL,
-                fecha_nac DATE NOT NULL
-            )
-        """
-    )
-    conn.commit()
-    conn.close()
+conexion.execute('''
+CREATE TABLE IF NOT EXISTS universitario (
+    id               INTEGER PRIMARY KEY,
+    nombre           TEXT NOT NULL,
+    apellidos        TEXT NOT NULL,
+    fecha_nacimiento DATE NOT NULL
+)''')
 
-#Inicioliza la creacion de base de datos 
-init_database()
+conexion.execute('''
+CREATE TABLE IF NOT EXISTS matriculacion (
+    id                  INTEGER PRIMARY KEY,
+    fecha_matriculacion DATE    NOT NULL,
+    curso_id            INTEGER NOT NULL,
+    universitario_id    INTEGER NOT NULL,
+    FOREIGN KEY (curso_id)         REFERENCES aula(id),
+    FOREIGN KEY (universitario_id) REFERENCES universitario(id)
+)''')
 
-@app.route("/")
-def index():
-    #Coneccion a la DB
-    conn = sqlite3.connect("contactos.db")
-    #Permite manejar registro enf orma de dccionario 
-    conn.row_factory = sqlite3.Row
+# ── Insertar datos ────────────────────────────────────────────
+conexion.execute('''
+INSERT INTO aula (descripcion, horas)
+VALUES ('Programacion(Python)-I', 25)
+''')
 
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM personas")
-    personas = cursor.fetchall()
+conexion.execute('''
+INSERT INTO aula (descripcion, horas)
+VALUES ('Programacion-Web(HTML, CSS, JavaScript)-I', 30)
+''')
 
-    return render_template('index.html',personas=personas)
+conexion.execute('''
+INSERT INTO universitario (nombre, apellidos, fecha_nacimiento)
+VALUES ('Caleb', 'Acarapi', '1999-09-09')
+''')
 
-@app.route("/create")
-def create():
-    return render_template('create.html')
+conexion.execute('''
+INSERT INTO matriculacion (fecha_matriculacion, curso_id, universitario_id)
+VALUES ('2024-02-01', 1, 1)
+''')
 
-@app.route("/save",methods=['POST'])
-def save():
-    nombre = request.form['nombre']
-    telefono = request.form['telefono']
-    fecha_nac = request.form['fecha_nac']
+conexion.execute('''
+INSERT INTO matriculacion (fecha_matriculacion, curso_id, universitario_id)
+VALUES ('2024-02-01', 2, 1)
+''')
 
-    conn = sqlite3.connect("contactos.db")
-    cursor = conn.cursor()
-    cursor.execute(
-        """
-        INSERT INTO personas (nombre,telefono,fecha_nac)
-        VALUES(?,?,?)
-        """,
-        (nombre,telefono,fecha_nac)
-    )
-    conn.commit()
-    conn.close()
-    return redirect("/")
+conexion.commit()
 
-@app.route("/edit/<int:id>")
-def edit(id):
-    #conexion a la DB
-    conn =sqlite3.connect("contactos.db")
-    #Permite manajar registro en forma de diccionario
-    conn.row_factory = sqlite3.Row
-    cursor = conn.cursor()
+# ── Mostrar tabla: aula ───────────────────────────────────────
+print("=" * 50)
+print(f"{'TABLA: AULA':^50}")
+print("=" * 50)
+print(f"{'ID':<5} {'DESCRIPCION':<35} {'HORAS':<6}")
+print("-" * 50)
+for fila in conexion.execute('SELECT * FROM aula'):
+    print(f"{fila[0]:<5} {fila[1]:<35} {fila[2]:<6}")
 
-    cursor.execute(
-        """
-        SELECT * FROM personas WHERE id = ?
-        """,
-        (id,)
-    )
-    personas = cursor.fetchone()
-    conn.close()
-    return render_template("edit.html",personas=personas)
+# ── Mostrar tabla: universitario ──────────────────────────────
+print("\n" + "=" * 55)
+print(f"{'TABLA: UNIVERSITARIO':^55}")
+print("=" * 55)
+print(f"{'ID':<5} {'NOMBRE':<15} {'APELLIDOS':<15} {'NACIMIENTO':<12}")
+print("-" * 55)
+for fila in conexion.execute('SELECT * FROM universitario'):
+    print(f"{fila[0]:<5} {fila[1]:<15} {fila[2]:<15} {fila[3]:<12}")
 
-@app.route("/update",methods=['POST'])
-def update():
-    id = request.form['id']
-    nombre = request.form['nombre']
-    telefono = request.form['telefono']
-    fecha_nac = request.form['fecha_nac']
-
-    conn = sqlite3.connect("contactos.db")
-    cursor = conn.cursor()
-
-    cursor.execute(
-        """
-        UPDATE personas SET nombre=?,telefono=?,fecha_nac=? 
-        WHERE id=? 
-        """,
-        (nombre,telefono,fecha_nac,id)
-    )
-    
-    conn.commit()
-    conn.close()
-    return redirect("/")
-
-@app.route('/delete/<int:id>')
-def delete(id):
-    conn = sqlite3.connect("contactos.db")
-    cursor = conn.cursor()
-    cursor.execute(
-        """
-        DELETE FROM personas WHERE id=? 
-        """,
-        (id,)
-    )
-    conn.commit()
-    conn.close()
-    return redirect('/')
-
-if __name__ == "__main__":
-    app.run(debug=True)
+# ── Mostrar tabla: matriculacion ─────────────────────────────t
