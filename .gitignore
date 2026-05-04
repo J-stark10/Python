@@ -6,3 +6,6 @@ venv/
 .venv/
 __pycache__/
 *.pyc
+Flask_Examen_Practico/
+Flask_Examen_Version2/
+*.zip
