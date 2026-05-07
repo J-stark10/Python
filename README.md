@@ -6,7 +6,7 @@ Este repositorio contiene las actividades realizadas durante el aprendizaje de P
 
 ## 📌 Actividad 7: Modelado de Base de Datos con SQLAlchemy
 
-En la carpeta `Biblioteca_SQLAlchemy` se desarrolla un sistema de gestión de biblioteca digital utilizando Flask y SQLAlchemy ORM.
+En la carpeta `Modelo_DB_SQLAlchemy` se desarrolla un sistema de gestión de biblioteca digital utilizando Flask y SQLAlchemy ORM.
 
 Se trabaja:
 
