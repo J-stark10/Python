@@ -1,6 +1,26 @@
 # 🚀 Aprendizaje de Python y Flask
 
-Este repositorio contiene las actividades realizadas durante el aprendizaje de Python y Flask.
+Este repositorio contiene las actividades realizadas durante el aprendizaje de Python, Flask y manejo de bases de datos con SQLAlchemy.
+
+---
+
+## 📌 Actividad 7: Modelado de Base de Datos con SQLAlchemy
+
+En la carpeta `Biblioteca_SQLAlchemy` se desarrolla un sistema de gestión de biblioteca digital utilizando Flask y SQLAlchemy ORM.
+
+Se trabaja:
+
+- Definición de modelos con SQLAlchemy
+- Relaciones 1–N entre Autor y Libro
+- Relaciones N–M entre Libro y Género
+- Uso de tabla intermedia `libro_genero`
+- Inicialización de la base de datos
+- Inserción de datos relacionados
+- Consulta de datos con ORM
+- Actualización de registros
+- Eliminación en cascada usando `cascade="all, delete-orphan"`
+
+💡 Esta actividad permite comprender el modelado de bases de datos relacionales utilizando ORM en Flask.
 
 ---
 
@@ -105,6 +125,6 @@ Se practican:
 - Python 🐍
 - Flask 🌐
 - SQLAlchemy 🧱
+- SQLite 🗄️
 - HTML + CSS 🎨
 - Bootstrap 💻
-- SQLite 🗄️
