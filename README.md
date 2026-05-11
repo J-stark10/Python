@@ -6,7 +6,7 @@ Este repositorio contiene las actividades realizadas durante el aprendizaje de P
 
 ## 📌 Actividad 7: Modelado de Base de Datos con SQLAlchemy
 
-En la carpeta `Modelo_DB_SQLAlchemy` se desarrolla un sistema de gestión de biblioteca digital utilizando Flask y SQLAlchemy ORM.
+En la carpeta `07-Modelo_DB_SQLAlchemy` se desarrolla un sistema de gestión de biblioteca digital utilizando Flask y SQLAlchemy ORM.
 
 Se trabaja:
 
@@ -26,7 +26,7 @@ Se trabaja:
 
 ## 📌 Actividad 6: CRUD con ORM (Video Flask + SQLAlchemy)
 
-En la carpeta `CRUD_ORM_Flask` se desarrolla un sistema CRUD utilizando Flask junto con SQLAlchemy como ORM.
+En la carpeta `06-CRUD_ORM_Flask` se desarrolla un sistema CRUD utilizando Flask junto con SQLAlchemy como ORM.
 
 Se trabaja:
 
@@ -44,7 +44,7 @@ Se trabaja:
 
 ## 📌 Actividad 5: CRUD completo con Flask + SQLite
 
-En la carpeta `CRUD_BD_Flask` se desarrolla una aplicación web con Flask conectada a SQLite implementando un CRUD completo.
+En la carpeta `05-CRUD_BD_Flask` se desarrolla una aplicación web con Flask conectada a SQLite implementando un CRUD completo.
 
 Se trabaja:
 
@@ -62,7 +62,7 @@ Se trabaja:
 
 ## 📌 Actividad 4: Conexión a Base de Datos con SQLite
 
-En la carpeta `Conexion_BD` se trabaja con una base de datos SQLite usando Python.
+En la carpeta `04-Conexion_BD` se trabaja con una base de datos SQLite usando Python.
 
 Se realiza:
 
@@ -77,7 +77,7 @@ Se realiza:
 
 ## 📌 Actividad 3: Sistema de Login con Flask
 
-En la carpeta `Gestion Paginas` se desarrolla un login básico utilizando Flask.
+En la carpeta `03-Gestion Paginas` se desarrolla un login básico utilizando Flask.
 
 Se trabaja:
 
@@ -93,7 +93,7 @@ Se trabaja:
 
 ## 📌 Actividad 2: Gestión de Rutas con Flask (Video 2)
 
-En la carpeta `Gestion_Rutas_Flask` se implementan ejemplos rutas usando Flask.
+En la carpeta `02-Gestion_Rutas_Flask` se implementan ejemplos rutas usando Flask.
 
 Se trabajan:
 
