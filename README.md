@@ -4,6 +4,26 @@ Este repositorio contiene las actividades realizadas durante el aprendizaje de P
 
 ---
 
+## 📌 Actividad 10: Aplicación Modular con Flask (App Factory + Blueprints + Migrate)
+
+En la carpeta `10-App-Factory-Migrate-Flask` se desarrolla una aplicación web estructurada con Flask utilizando el patrón App Factory, Blueprints y Flask-Migrate para el manejo de base de datos.
+
+Se trabaja:
+
+- Estructura modular con patrón App Factory
+- Organización del proyecto en `src/` con módulos independientes
+- Uso de Blueprints para separar funcionalidades (`core`, `miembros`, `tareas`)
+- Implementación de CRUD completo para miembros y tareas
+- Uso de SQLAlchemy como ORM
+- Migraciones de base de datos con Flask-Migrate y Alembic
+- Uso de SQLite como base de datos local
+- Separación de modelos, rutas y templates por módulo
+- Uso de Jinja2 para renderizado de vistas
+
+💡 Esta actividad permite aplicar una arquitectura escalable y profesional en una aplicación Flask organizada por módulos.
+
+---
+
 ## 📌 Actividad 7: Modelado de Base de Datos con SQLAlchemy
 
 En la carpeta `07-Modelo_DB_SQLAlchemy` se desarrolla un sistema de gestión de biblioteca digital utilizando Flask y SQLAlchemy ORM.
