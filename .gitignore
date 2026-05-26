@@ -10,3 +10,40 @@ Flask_Examen_Practico/
 Flask_Examen_Version2/
 00-Docs/
 *.zip
+
+
+# Bases de datos SQLite
+*.db
+*.sqlite3
+
+# Flask instance (config local)
+instance/
+
+# Logs
+*.log
+
+# IDEs
+.vscode/
+.idea/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Testing / cache adicional
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Flask-Migrate (archivos generados opcionales)
+migrations/__pycache__/
+migrations/versions/__pycache__/
+
+# Archivos temporales
+*.bak
+*.tmp
+
+# Archivos de build o empaquetado
+build/
+dist/
+*.egg-info/

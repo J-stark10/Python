@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block title %}Producto{% endblock %}
+{% block content %}
+
+<div class="flex items-center justify-between mb-8">
+
+    <div>
+        <h1 class="text-3xl font-bold text-white">Productos</h1>
+        <p class="text-zinc-400 mt-1">Gestiona los productos del sistema</p>
+    </div>
+
+    <a href="{{ url_for('product.create') }}"
+       class="bg-blue-600 hover:bg-blue-700 px-5 py-3 rounded-xl font-medium transition">
+        + Agregar Producto
+    </a>
+
+</div>
+
+<div class="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden">
+
+    <table class="w-full">
+
+        <thead class="bg-zinc-800">
+
+            <tr>
+                <th class="text-left px-6 py-4 text-zinc-300">ID</th>
+                <th class="text-left px-6 py-4 text-zinc-300">Descripción</th>
+                <th class="text-left px-6 py-4 text-zinc-300">Precio</th>
+                <th class="text-left px-6 py-4 text-zinc-300">Stock</th>
+                <th class="text-left px-6 py-4 text-zinc-300">Acciones</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for product in products %}
+
+            <tr class="border-t border-zinc-800 hover:bg-zinc-800/50 transition">
+
+                <td class="px-6 py-4">{{ product.id }}</td>
+
+                <td class="px-6 py-4 font-medium">
+                    {{ product.description }}
+                </td>
+
+                <td class="px-6 py-4 text-green-400 font-semibold">
+                    $ {{ product.price | round(2) }}
+                </td>
+
+                <td class="px-6 py-4">
+
+                    {% if product.stock > 10 %}
+
+                        <span class="bg-green-500/20 text-green-400 px-3 py-1 rounded-lg text-sm font-medium">
+                            {{ product.stock }} disponibles
+                        </span>
+
+                    {% elif product.stock > 0 %}
+
+                        <span class="bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded-lg text-sm font-medium">
+                            {{ product.stock }} bajos
+                        </span>
+
+                    {% else %}
+
+                        <span class="bg-red-500/20 text-red-400 px-3 py-1 rounded-lg text-sm font-medium">
+                            Sin stock
+                        </span>
+
+                    {% endif %}
+
+                </td>
+
+                <td class="px-6 py-4">
+
+                    <div class="flex gap-3">
+
+                        <a href="{{ url_for('product.edit', id=product.id) }}"
+                           class="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded-lg text-sm font-medium transition">
+                            Editar
+                        </a>
+
+                        <a href="{{ url_for('product.delete', id=product.id) }}"
+                            onclick="return confirm('¿Estas de eliminar este producto?')"
+                           class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                            Eliminar
+                        </a>
+
+                    </div>
+
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}

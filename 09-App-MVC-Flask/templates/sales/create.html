@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block title %}Crear venta{% endblock %}
+{% block content %}
+
+<div class="max-w-2xl mx-auto">
+
+    <div class="mb-8">
+        <h1 class="text-3xl font-bold text-white">Nueva Venta</h1>
+        <p class="text-zinc-400 mt-2">Registra una nueva venta en el sistema</p>
+    </div>
+
+    <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-8">
+
+        <form method="POST" action="{{ url_for('sale.create') }}" class="space-y-6">
+
+            <div>
+                <label class="block mb-2 text-sm font-medium text-zinc-300">
+                    Cliente
+                </label>
+
+                <select name="client_id"
+                        class="w-full bg-zinc-950 border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-600 transition">
+
+                    {% for client in clients %}
+                        <option value="{{ client.id }}">
+                            {{ client.name }}
+                        </option>
+                    {% endfor %}
+
+                </select>
+            </div>
+
+            <div>
+                <label class="block mb-2 text-sm font-medium text-zinc-300">
+                    Producto
+                </label>
+
+                <select name="product_id"
+                        class="w-full bg-zinc-950 border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-600 transition">
+
+                    {% for product in products %}
+                        <option value="{{ product.id }}">
+                            {{ product.description }}
+                        </option>
+                    {% endfor %}
+
+                </select>
+            </div>
+
+            <div>
+                <label class="block mb-2 text-sm font-medium text-zinc-300">
+                    Cantidad
+                </label>
+
+                <input type="number"
+                       name="amount"
+                       placeholder="Ingrese la cantidad"
+                       class="w-full bg-zinc-950 border border-zinc-700 rounded-xl px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-600 transition">
+            </div>
+
+            <div>
+                <label class="block mb-2 text-sm font-medium text-zinc-300">
+                    Fecha
+                </label>
+
+                <input type="date"
+                       name="date"
+                       class="w-full bg-zinc-950 border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-600 transition">
+            </div>
+
+            <div class="flex justify-end gap-4 pt-4">
+
+                <a href="{{ url_for('sale.index') }}"
+                   class="bg-zinc-800 hover:bg-zinc-700 px-6 py-3 rounded-xl font-medium transition">
+                    Cancelar
+                </a>
+
+                <button type="submit"
+                        class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-xl font-medium transition">
+                    Guardar Venta
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

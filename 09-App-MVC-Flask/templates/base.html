@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body class="bg-zinc-950 text-zinc-200">
+
+    <div class="flex min-h-screen">
+        <!-- SIDEBAR -->
+        <aside class="w-64 bg-zinc-900 border-zinc-800 p-6">
+            <h1 class="text-2xl font-bold mb-10 text-white">
+                Ventas App
+            </h1>
+
+            <nav class="space-y-3">
+
+                <a href="{{ url_for('user.index') }}"
+                    class="block px-4 py-3 rounded-lg hover:bg-zinc-800 transition {{ is_active('/users/') }}">
+                    Usuarios
+                </a>
+                <a href="{{ url_for('client.index') }}"
+                    class="block px-4 py-3 rounded-lg hover:bg-zinc-800 transition {{ is_active('/clients/') }}">
+                    Clientes
+                </a>
+                <a href="{{ url_for('product.index') }}"
+                    class="block px-4 py-3 rounded-lg hover:bg-zinc-800 transition {{ is_active('/products/')}} ">
+                    Productos
+                </a>
+                <a href="{{ url_for('sale.index') }}"
+                    class="block px-4 py-3 rounded-lg hover:bg-zinc-800 transition {{ is_active('/sales/') }}">
+                    Ventas
+                </a>
+
+            </nav>
+
+        </aside>
+
+        <!-- MAIN -->
+        <div class="flex-1 p-8">
+            {% block content %} {% endblock %}
+        </div>
+        
+    </div>
+
+</body>
+</html>

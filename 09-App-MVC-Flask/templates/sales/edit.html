@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block title %}Editar venta{% endblock %}
+{% block content %}
+
+<div class="max-w-2xl mx-auto">
+
+    <div class="mb-8">
+        <h1 class="text-3xl font-bold text-white">Editar Venta</h1>
+        <p class="text-zinc-400 mt-2">Actualiza la información de la venta</p>
+    </div>
+
+    <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-8">
+
+        <form method="POST" class="space-y-6">
+
+            <div>
+                <label class="block mb-2 text-sm font-medium text-zinc-300">
+                    Cliente
+                </label>
+
+                <select name="client_id"
+                        class="w-full bg-zinc-950 border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-600 transition">
+
+                    {% for client in clients %}
+
+                        <option value="{{ client.id }}"
+                            {% if client.id == sale.client_id %}selected{% endif %}>
+
+                            {{ client.name }}
+
+                        </option>
+
+                    {% endfor %}
+
+                </select>
+            </div>
+
+            <div>
+                <label class="block mb-2 text-sm font-medium text-zinc-300">
+                    Producto
+                </label>
+
+                <select name="product_id"
+                        class="w-full bg-zinc-950 border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-600 transition">
+
+                    {% for product in products %}
+
+                        <option value="{{ product.id }}"
+                            {% if product.id == sale.product_id %}selected{% endif %}>
+
+                            {{ product.description }}
+
+                        </option>
+
+                    {% endfor %}
+
+                </select>
+            </div>
+
+            <div>
+                <label class="block mb-2 text-sm font-medium text-zinc-300">
+                    Cantidad
+                </label>
+
+                <input type="number"
+                       name="amount"
+                       value="{{ sale.amount }}"
+                       class="w-full bg-zinc-950 border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-600 transition">
+            </div>
+
+            <div>
+                <label class="block mb-2 text-sm font-medium text-zinc-300">
+                    Fecha
+                </label>
+
+                <input type="date"
+                       name="date"
+                       value="{{ sale.date.strftime('%Y-%m-%d') }}"
+                       class="w-full bg-zinc-950 border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-600 transition">
+            </div>
+
+            <div class="flex justify-end gap-4 pt-4">
+
+                <a href="{{ url_for('sale.index') }}"
+                   class="bg-zinc-800 hover:bg-zinc-700 px-6 py-3 rounded-xl font-medium transition">
+                    Cancelar
+                </a>
+
+                <button type="submit"
+                        class="bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-3 rounded-xl font-medium transition">
+                    Actualizar Venta
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

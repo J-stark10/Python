@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Ventas{% endblock %}
+{% block content %}
+
+<div class="flex items-center justify-between mb-8">
+
+    <div>
+        <h1 class="text-3xl font-bold text-white">Ventas</h1>
+        <p class="text-zinc-400 mt-1">Gestiona las ventas del sistema</p>
+    </div>
+
+    <a href="{{ url_for('sale.create') }}"
+       class="bg-blue-600 hover:bg-blue-700 px-5 py-3 rounded-xl font-medium transition">
+        + Nueva Venta
+    </a>
+
+</div>
+
+<div class="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden">
+
+    <table class="w-full">
+
+        <thead class="bg-zinc-800">
+
+            <tr>
+                <th class="text-left px-6 py-4 text-zinc-300">ID</th>
+                <th class="text-left px-6 py-4 text-zinc-300">Cliente</th>
+                <th class="text-left px-6 py-4 text-zinc-300">Producto</th>
+                <th class="text-left px-6 py-4 text-zinc-300">Cantidad</th>
+                <th class="text-left px-6 py-4 text-zinc-300">Fecha</th>
+                <th class="text-left px-6 py-4 text-zinc-300">Acciones</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for sale in sales %}
+
+            <tr class="border-t border-zinc-800 hover:bg-zinc-800/50 transition">
+
+                <td class="px-6 py-4">{{ sale.id }}</td>
+
+                <td class="px-6 py-4 font-medium">
+                    {{ sale.client.name }}
+                </td>
+
+                <td class="px-6 py-4">
+                    {{ sale.product.description }}
+                </td>
+
+                <td class="px-6 py-4">
+                    {{ sale.amount }}
+                </td>
+
+                <td class="px-6 py-4 text-zinc-400">
+                    {{ sale.date.strftime('%Y-%m-%d')}}
+                </td>
+
+                <td class="px-6 py-4">
+
+                    <div class="flex gap-3">
+
+                        <a href="{{ url_for('sale.edit', id=sale.id) }}"
+                           class="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded-lg text-sm font-medium transition">
+                            Editar
+                        </a>
+
+                        <a href="{{ url_for('sale.delete', id=sale.id) }}"
+                            onclick="return confirm('¿Estas seguro de eliminar esta venta?')"
+                           class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                            Eliminar
+                        </a>
+
+                    </div>
+
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}
