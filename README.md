@@ -4,6 +4,28 @@ Este repositorio contiene las actividades realizadas durante el aprendizaje de P
 
 ---
 
+## 📌 Actividad 12: API REST con Flask + SQLAlchemy (CRUD Películas)
+
+En la carpeta `12-Api-Rest-Flask` se desarrolla una API REST para la gestión de películas usando Flask y SQLAlchemy.
+
+Se trabaja:
+
+- Creación de API REST con Flask
+- Modelo de datos con SQLAlchemy
+- Base de datos SQLite
+- CRUD completo:
+  - Crear (POST)
+  - Leer (GET)
+  - Actualizar (PUT)
+  - Eliminar (DELETE)
+- Manejo de datos en formato JSON
+- Rutas dinámicas con Flask
+- Serialización con `to_dict()`
+
+💡 Permite construir una API funcional con operaciones básicas sobre una base de datos.
+
+---
+
 ## 📌 Actividad 10: Aplicación Modular con Flask (App Factory + Blueprints + Migrate)
 
 En la carpeta `10-App-Factory-Migrate-Flask` se desarrolla una aplicación web estructurada con Flask utilizando el patrón App Factory, Blueprints y Flask-Migrate para el manejo de base de datos.

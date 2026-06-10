@@ -1,0 +1,11 @@
+<nav>
+    <a href="{{ url_for('main.index') }}">Inicio</a>
+    {% if current_user.is_authenticated %}
+        <a href="{{ url_for('main.dashboard') }}">Dashboard</a>
+        <a href="{{ url_for('auth.logout') }}">Cerrar sesión</a>
+    {% else %}
+        <a href="{{ url_for('auth.login') }}">Iniciar sesión</a>
+        <a href="{{ url_for('auth.register') }}">Registrarse</a>
+    {% endif %}
+</nav>
+<hr>
